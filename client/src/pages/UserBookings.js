@@ -14,34 +14,39 @@ function UserBookings() {
 
   useEffect(() => {
     dispatch(getAllBookings());
+    // eslint-disable-next-line
   }, []);
 
   return (
     <DefaultLayout>
       {loading && (<Spinner />)}
-      <h3 className="text-center mt-2">My Bookings</h3>
+      <h3 className="text-center mt-2 font-semibold uppercase mb-6">My Bookings</h3>
 
-      {bookings.filter(o => o.user === user._id).map((booking) => (
-        <div key={booking.car._id}>
-          <p><b>{booking.car.name}</b></p>
-          <p>Total hours : <b>{booking.totalHours}</b></p>
-          <p>Rent per hour : <b>{booking.car.rentPerHour}</b></p>
-          <p>Total amount : <b>{booking.totalAmount}</b></p>
+      
+        <div class="max-w-screen-xl mx-auto mb-6">
 
+          {bookings.filter(o => o.user === user._id).map((booking) => (
+            <div key={booking.car._id} className='shadow-md lg:h-72 rounded-lg mb-8 max-w-screen-xl m-5 md:flex'>           
 
+              <div class="p-6 grow">
+                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">{booking.car.name}</h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-300">Total hours : <b>{booking.totalHours}</b></p>
+                <p class="mt-1 text-gray-500 dark:text-gray-300">Total amount : <b>{booking.totalAmount}</b></p>
+                <p class="mt-1 text-gray-500 dark:text-gray-300">Transaction Id : <b>{booking.transactionId}</b></p>
+                <p class="mt-1 text-gray-500 dark:text-gray-300">From: <b>{booking.bookedTimeSlots.from}</b></p>
+                <p class="mt-1 text-gray-500 dark:text-gray-300">To: <b>{booking.bookedTimeSlots.to}</b></p>
+                <p class="mt-1 text-gray-500 dark:text-gray-300">Date of booking: <b>{moment(booking.createdAt).format('MMM DD yyyy')}</b></p>
+                <p class="mt-1 text-gray-500 dark:text-gray-300">Rent per hour : <b>{booking.car.rentPerHour}</b></p>
+                <p class="mt-1 text-gray-500 dark:text-gray-300"></p>
+              </div>
+            
+              <div class="grow">
+                <img src={booking.car.image} alt="bookinCarImage" className='lg:h-72 h-full w-full object-cover object-center rounded-b md:rounded' />
+              </div>
+            </div>
+          ))}
 
-          <p>Transaction Id : <b>{booking.transactionId}</b></p>
-          <p>From: <b>{booking.bookedTimeSlots.from}</b></p>
-          <p>To: <b>{booking.bookedTimeSlots.to}</b></p>
-          <p>Date of booking: <b>{moment(booking.createdAt).format('MMM DD yyyy')}</b></p>
-
-
-
-          <img src={booking.car.image} className="p-2" alt="bookinCarImage" />
         </div>
-
-      ))}
-
       
     </DefaultLayout >
   );

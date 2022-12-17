@@ -29,19 +29,44 @@ const Login = () => {
   return (
     <>
       {loading && (<Spinner />)}
+    
 
-      <form className='m-2' onSubmit={handleSubmit}>
-        <label>password:  <input onChange={handleChange} type='password' name='password' value={formData.name} required className='border border-black' /></label>
-        <br />
+    
+      <div class="w-full max-w-sm mt-20 mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div class="px-6 py-4">
+          <h2 class="text-3xl font-bold text-center text-gray-700 dark:text-white">Obaya</h2>
 
-        <label>username:  <input onChange={handleChange} name='username' value={formData.username} type='username' className='border border-black mt-5' /></label>
-        <br />
-        <button type='submit' className='p-2 bg-orange-500'>login</button>
-      </form>
-      <NavLink to="/register" end>
-        <span className="text-blue-500">Not registerd? click here to register</span>
-      </NavLink>
+          <h3 class="mt-1 text-xl font-medium text-center text-gray-600 dark:text-gray-200">Welcome Back</h3>
 
+          <p class="mt-1 text-center text-gray-500 dark:text-gray-400">Login or create account</p>
+
+          <form onSubmit={handleSubmit}>
+            <div class="w-full mt-4">
+              <input onChange={handleChange} name='username' value={formData.username} type='username' class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" placeholder="Username" aria-label="user name" />
+            </div>
+
+            <div class="w-full mt-4">
+              <input onChange={handleChange} type='password' name='password' value={formData.name} required class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" placeholder="Password" aria-label="Password" />
+            </div>
+
+            <div class="flex items-center justify-between mt-4">
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-200 hover:text-gray-500">Forget Password?</a>
+
+              <button type='submit' class="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                Sign In
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="flex items-center justify-center py-4 text-center bg-gray-50 dark:bg-gray-700">
+          <span class="text-sm text-gray-600 dark:text-gray-200">Don't have an account? </span>
+          <NavLink to="/register" end>
+            <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400">Register</a>
+          </NavLink>
+        </div>
+      </div>
+     
     </>
   )
 }
