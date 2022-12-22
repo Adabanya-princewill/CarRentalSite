@@ -41,7 +41,7 @@ const DefaultLayout = (props) => {
   return (
     <>
       <div className='w-full shadow-md' >
-        <div className="py-4 mx-auto max-w-screen-xl mb-8 lg:mb-8">
+        <div className="py-4 mx-auto">
           <div className="relative flex items-center justify-between">
             <NavLink to="/" end>
               <span className="px-4 md:text-xl text-sm font-bold text-gray-800">Obaya <span className='text-orange-300'>Cars</span> </span>
@@ -53,7 +53,7 @@ const DefaultLayout = (props) => {
                 }}
                 >
                   <a onClick={(e) => e.preventDefault()}>
-                    <Space className='bg-orange-300 rounded-md px-2 py-1'>
+                    <Space className='bg-orange-300 uppercase font-semibold rounded-md px-2 py-1'>
                       {user.username}
                       <DownOutlined />
                     </Space>

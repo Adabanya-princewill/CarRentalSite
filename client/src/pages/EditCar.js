@@ -33,7 +33,7 @@ function EditCar() {
   return (
     <DefaultLayout>
       {loading && <Spinner />}
-      <div className='mx-auto max-w-screen-xl'>
+      <div className='mx-auto max-w-screen-xl mt-10'>
           <NavLink to={"/admin"}>
             <span className='shadow-md rounded-md px-5 py-2 ml-5 text-black'> back</span>
           </NavLink>

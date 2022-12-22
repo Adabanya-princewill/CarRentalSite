@@ -69,7 +69,7 @@ const BookingCar = () => {
       <div className='max-w-screen-xl mx-auto'>
 
 
-        <div>
+        <div className="mt-10">
           <NavLink to={"/"}>
             <span className='shadow-md rounded-md px-5 py-2 ml-5 text-black'> back</span>
           </NavLink>
@@ -137,7 +137,7 @@ const BookingCar = () => {
                       token={handleToken}
                       currency='USD'
                       amount={totalAmount}
-                      stripeKey="pk_test_51MEDGZEDeFPrwBMKJXBgwpUeC3uGtRJe6ppvE0PZokoL3PVhU91W4gn79sab7V7LWuwSAr7RGMdG3mbAhzHufYKO002XQZt6It"
+                      stripeKey = {process.env.STRIPE_KEY}
                     >
                       <button className="bg-orange-300 p-2 mt-8 rounded-md">
                         Book Now

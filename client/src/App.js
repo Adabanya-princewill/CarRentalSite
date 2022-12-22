@@ -8,6 +8,7 @@ import AddCar from './pages/AddCar';
 import UserBookings from './pages/UserBookings';
 import AdminHome from './pages/AdminHome';
 import EditCar from './pages/EditCar';
+import About from './pages/About';
 
 
 

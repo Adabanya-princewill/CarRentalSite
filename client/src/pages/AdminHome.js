@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Popconfirm } from "antd";
+import Footer from "../components/Footer";
 
 function AdminHome() {
   const { cars } = useSelector((state) => state.carsReducer);
@@ -85,31 +86,8 @@ function AdminHome() {
           </div>
         ))}
       </main>
-
-
-
-
-
-
-
-
-
-
-      {/* 
-      <Row justify="center" gutter={16} className="mt-2">
-        <Col lg={20} sm={24}>
-          <div className="d-flex justify-content-between align-items-center">
-            <h3 className="mt-1 mr-2">Admin Panel</h3>
-            <button className="btn1">
-              <a href="/addcar">ADD CAR</a>
-            </button>
-          </div>
-        </Col>
-      </Row> */}
-
-
-      
-    </DefaultLayout>
+     
+      </DefaultLayout>
   );
 }
 
